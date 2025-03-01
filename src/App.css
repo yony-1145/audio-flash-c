@@ -1,0 +1,6 @@
+.app-container {
+    display: flex; /* Flexboxを有効にする */
+    flex-direction: column; /* 縦並びにする */
+    height: 300px; 
+    /* text-align: center; テキストを中央揃え */
+  }

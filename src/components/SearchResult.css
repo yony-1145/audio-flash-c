@@ -1,0 +1,9 @@
+.result-container{
+    display: flex; /* コンポーネントを横並びにする */
+    flex-wrap: wrap; /* コンポーネントが横に並びきれない場合は折り返す */
+    justify-content: flex-start; /* 左寄せにする */
+    margin-top: 20px;  /* 上部に余白を設定 */
+}
+
+/* コンポーネント同士をつめずに表示するには 
+flex-wrap: wrap;って？
