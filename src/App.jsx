@@ -7,13 +7,10 @@ function App() {
     <>
       <div className='app-container'>
         <SearchBar/>
-        {/* <SearchResult/> */}pwd
+        {/* <SearchResult/> */}
       </div>
     </>
   );
 }
 
 export default App;
-
-/*デフォルトの関数を消し、ファイルの中身をできるだけシンプルな構成にする。
-アセット等がいらないファイルがある場合は削除する。*/

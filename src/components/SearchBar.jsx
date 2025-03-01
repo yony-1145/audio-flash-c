@@ -1,6 +1,6 @@
 // インプットしたものを取得して、searchResultを返す。
 import { useState,useEffect } from "react";
-import SearchResult from "./SearchResult"; // SearchResultコンポーネントをインポート、更新するため？
+import SearchResult from "./SearchResult"; 
 
 function SearchBar() {
   const [ searchTerm, setSearchTerm ] = useState('');
@@ -10,6 +10,13 @@ function SearchBar() {
 
   function saveInputText(event){ 
     setSearchTerm(event.target.value);
+  }
+
+  function EnterKeyDown(event) {
+    if (event.key === 'Enter') {
+        saveInputText
+     setIsClicked(true);
+    }
   }
 
   async function fetchTerm(term) {
@@ -22,7 +29,6 @@ function SearchBar() {
       console.error('リクエストエラー:', error);
     }
   }
-  // 関数は呼び出された時のみ実行であってるよね？
 
   useEffect(() => {
     if(isClicked){
@@ -39,13 +45,14 @@ function SearchBar() {
           className='send-button'
           type="text" 
           onChange={saveInputText}
+          onKeyDown={EnterKeyDown}
           value={searchTerm}
         />
-        <button 
+        <button
           className='send-button'
           onClick={() => setIsClicked(true)}
           >Send</button> 
-          {searchResult && <SearchResult result={searchResult} />} {/* propsの利用 */}
+          <SearchResult result={searchResult} searchTerm={searchTerm} />
       </div>
     )
   }
